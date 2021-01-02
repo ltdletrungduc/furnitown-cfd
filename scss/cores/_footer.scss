@@ -1,0 +1,75 @@
+footer {
+	background-color: $main-blue-color;
+	.container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.footer__slogan {
+		// FIXED HEIGHT
+		height: 356px;
+		$slogan-fz: 18px;
+		position: relative;
+		.slogan {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin-left: calc(100% / 12 * 7);
+			z-index: $default-z;
+			@include fontFormat($slogan-fz, $italic-font, 40px, $white);
+		}
+		img {
+			position: absolute;
+			right: calc(-100% / 24 - 1em);
+			bottom: -40px;
+			z-index: $default-z + -1;
+		}
+	}
+
+	.footer__main {
+		height: 530px;
+		// @include midflexcol;
+		.logo-container {
+			width: 100%;
+			@include midflex;
+			position: relative;
+			margin-top: 170px;
+			margin-bottom: 50px;
+			a {
+			}
+			&::before,
+			&::after {
+				position: absolute;
+				content: "";
+				background-color: #665d49;
+				width: calc(100% / 12 * 5);
+				height: 2px;
+			}
+			&::before {
+				left: 0;
+			}
+			&::after {
+				right: 0;
+			}
+		}
+		.contact {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			.contact__item {
+				span {
+					@include fontFormat(11px, $main-font, 26px, $white, $upper-c, 0.05em);
+				}
+			}
+		}
+	}
+	@include desktop {
+	}
+	@include tablet {
+	}
+	@include mobile {
+	}
+	@include mobile-xxs {
+	}
+}

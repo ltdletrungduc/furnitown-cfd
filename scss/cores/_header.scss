@@ -1,0 +1,63 @@
+$headerH: 70px;
+header {
+	//display: none;
+	position: fixed;
+	top: -$headerH;
+	left: 0;
+	height: $headerH;
+	width: 100%;
+	text-align: center;
+	background-color: $main-blue-color;
+	z-index: $header-z;
+	opacity: 0;
+	transition: $time;
+	.menu {
+		height: 100%;
+		width: calc(100% / 12 * 7);
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		@include mid;
+		.menu__item {
+			width: calc(100% / 7);
+			a {
+				@include fontFormat(
+					$fz-text,
+					$main-font,
+					40px,
+					$white,
+					$upper-c,
+					normal,
+					normal
+				);
+			}
+			&.logo-container {
+				flex-grow: 1;
+				a {
+					line-height: 0;
+					#logo > * {
+						fill: $white;
+					}
+					&:hover {
+						#logo > * {
+							fill: #cb8f2b;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.--active {
+		top: 0;
+		opacity: 1;
+		transition: $time;
+	}
+	@include desktop {
+	}
+	@include tablet {
+	}
+	@include mobile {
+	}
+	@include mobile-xxs {
+	}
+}

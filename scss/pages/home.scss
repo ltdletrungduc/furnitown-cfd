@@ -1,0 +1,234 @@
+.homepage {
+	.slider {
+		height: 100vh;
+		position: relative;
+		overflow: hidden;
+		.slider__wrapper {
+			height: 100%;
+			width: 100vw;
+			position: relative;
+			overflow: hidden;
+			.slider__item {
+				height: 100%;
+				width: 100%;
+				.content {
+					@include mid;
+					text-align: center;
+					z-index: $default-z + 1;
+					@include midflexcol;
+					justify-content: space-between;
+					height: 200px;
+					.content__title {
+						margin-top: -100px;
+						h2 {
+							@include fontFormat(
+								80px,
+								$custom-font,
+								80px,
+								$white,
+								$upper-c,
+								0,
+								normal
+							);
+						}
+					}
+					.content__description {
+						p {
+							@include fontFormat(
+								$fz-text,
+								$main-font,
+								26px,
+								$white,
+								$upper-c,
+								-0.025em,
+								bold
+							);
+						}
+					}
+					.button {
+						padding: 8px 35px;
+						background-color: #171717;
+						border-radius: 5px;
+						span {
+							@include fontFormat(
+								11px,
+								$main-font,
+								20px,
+								$white,
+								$upper-c,
+								0,
+								bold
+							);
+						}
+					}
+				}
+				img {
+					@include mid;
+					min-height: 100%;
+					min-width: 100%;
+					max-height: 100%;
+					max-width: 100%;
+					object-fit: cover;
+					z-index: $default-z;
+				}
+				&.is-selected {
+				}
+			}
+		}
+		.slider__control {
+		}
+		.social {
+			width: 230px;
+			.social__list {
+				.social__item {
+					a {
+						i {
+							.arrow-icon {
+								left: 20px;
+								width: 22px;
+								* {
+									fill: black;
+								}
+							}
+						}
+					}
+					&:hover {
+						a {
+							i {
+								.arrow-icon {
+									left: 30px;
+									* {
+										fill: $white;
+									}
+								}
+							}
+						}
+						span {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+	.product {
+		.container {
+			position: relative;
+		}
+		.text,
+		.text > strong {
+			@include fontFormat($fz-text, $main-font, 40px, $black);
+		}
+		.text {
+			position: absolute;
+			top: 160px;
+			width: 380px;
+			> strong {
+				font-weight: bold;
+			}
+		}
+
+		.product__list {
+			padding-top: 165px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 500px 410px 245px;
+			column-gap: $gap;
+			row-gap: $gap * 2;
+		}
+		.product__item {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			figure {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				z-index: $default-z;
+				> img {
+					@include mid;
+					object-fit: cover;
+					min-width: 100%;
+					min-height: 100%;
+					transition: $time * 2;
+				}
+				.overlay {
+					z-index: $default-z + 1;
+					opacity: 0;
+					transform: translate(-50%, -50%) scale(0.8);
+					transition: $time * 2;
+					.content {
+						a svg {
+							width: 22px;
+						}
+					}
+				}
+				&:hover {
+					> img {
+						transform: translate(-50%, -50%) scale(1.5);
+						transition: $time * 3;
+					}
+					.overlay {
+						transform: translate(-50%, -50%) scale(1);
+						opacity: 0.9;
+						transition: $time * 3;
+					}
+				}
+			}
+			&:nth-child(1) {
+				figure {
+					.overlay {
+						background-color: $overlay-blue-color;
+					}
+					min-height: 265px;
+				}
+			}
+			&:nth-child(2) {
+				figure {
+					.overlay {
+						background-color: $overlay-brown-color;
+					}
+					min-height: 460px;
+				}
+			}
+			&:nth-child(3) {
+				figure {
+					.overlay {
+						background-color: $overlay-blue-color;
+					}
+					min-height: 365px;
+				}
+			}
+			&:nth-child(4) {
+				figure {
+					.overlay {
+						background-color: $overlay-brown-color;
+					}
+					min-height: 560px;
+					margin-bottom: -355px;
+				}
+			}
+			&:nth-child(5) {
+				figure {
+					.overlay {
+						background-color: $overlay-blue-color;
+					}
+					min-height: 355px;
+					margin-bottom: -155px;
+				}
+			}
+			.product__title {
+				margin-bottom: 15px;
+			}
+			&.col-span-2 {
+				grid-column: span 2;
+			}
+		}
+	}
+}
+
+// 265 - mb300
+// 460 - mb515
+// 365 - mb400
+// 560 - mb615
+// 355 - mb400

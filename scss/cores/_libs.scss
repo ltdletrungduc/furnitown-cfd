@@ -1,0 +1,67 @@
+$animation-fill-width: "animation-fill-width";
+@include keyframes($animation-fill-width) {
+	0% {
+		width: 0;
+		opacity: 0.5;
+	}
+	100% {
+		width: 100%;
+		opacity: 1;
+	}
+}
+
+@mixin fillTextWithColor(
+	$currentColor: $black,
+	$nexColor: $white,
+	$duration: $time * 4,
+	$style: ease-out
+) {
+	background: -webkit-linear-gradient(
+		left,
+		$nexColor,
+		$nexColor 50%,
+		$currentColor 50%,
+		$currentColor
+	);
+	background: -moz-linear-gradient(
+		left,
+		$nexColor,
+		$nexColor 50%,
+		$currentColor 50%,
+		$currentColor
+	);
+	background: -o-linear-gradient(
+		left,
+		$nexColor,
+		$nexColor 50%,
+		$currentColor 50%,
+		$currentColor
+	);
+	background: linear-gradient(
+		to right,
+		$nexColor,
+		$nexColor 50%,
+		$currentColor 50%,
+		$currentColor
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 200% 100%;
+	background-position: 100% 100%;
+	&:hover {
+		transition: background-position $duration $style;
+		color: transparent;
+		-webkit-text-fill-color: transparent;
+		background-position: 0% 0%;
+	}
+}
+
+$animation-zoom-in: "animation-zoom-in";
+@include keyframes($animation-zoom-in) {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1.5);
+	}
+}
