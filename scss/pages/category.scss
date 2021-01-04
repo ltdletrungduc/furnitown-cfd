@@ -1,4 +1,10 @@
 .category {
+	// FLICKTY
+	.custom-row {
+		.flickity-viewport {
+			//margin: 0 -15px;
+		}
+	}
 	.category__list {
 		width: 100%;
 		.container {
@@ -65,7 +71,11 @@
 			.category__products {
 				height: 550px;
 				.cell {
+					width: calc((100% - 60px) / 3);
+					margin-right: 30px;
 					.cell__content {
+						flex-grow: 1;
+						justify-content: space-evenly;
 						.cell__title {
 						}
 						.cell__description {
@@ -89,6 +99,16 @@
 						.cell__btn {
 						}
 					}
+					&::after {
+						position: absolute;
+						content: "";
+						width: 1px;
+						height: 85%;
+						background-color: $main-grey-color;
+						top: 0;
+						right: -15px;
+						opacity: 0.5;
+					}
 				}
 			}
 			.control {
@@ -100,29 +120,26 @@
 		}
 	}
 	.category__banner {
-		width: 100%;
-		height: 450px;
-		overflow: hidden;
-		position: relative;
 		.container {
-			height: 100%;
-			position: relative;
-			.banner__slogan {
-				position: absolute;
-				z-index: $default-z + 1;
-				width: 55%;
-				bottom: 20%;
-				right: 0;
-				text-align: right;
-				@include fontFormat(
-					24px,
-					$custom-font,
-					50.45px,
-					$white,
-					$upper-c,
-					0.1em,
-					normal
-				);
+			.banner__content {
+				justify-content: flex-end;
+				&::after {
+					display: none;
+				}
+				.banner__title {
+					z-index: $default-z + 1;
+					width: 55%;
+					text-align: right;
+					@include fontFormat(
+						24px,
+						$custom-font,
+						50.45px,
+						$white,
+						$upper-c,
+						0.1em,
+						normal
+					);
+				}
 			}
 		}
 		img {

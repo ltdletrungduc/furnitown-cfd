@@ -99,8 +99,8 @@
 	$delay,
 	$duration,
 	$animation,
-	$direction: forward,
-	$fillmode: fowards
+	$direction: forwards,
+	$fillmode: forwards
 ) {
 	-webkit-animation-delay: $delay;
 	-webkit-animation-duration: $duration;

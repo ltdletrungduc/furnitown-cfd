@@ -65,3 +65,25 @@ $animation-zoom-in: "animation-zoom-in";
 		transform: translate(-50%, -50%) scale(1.5);
 	}
 }
+
+$animation-menu-slide-down: "animation-menu-slide-down";
+@include keyframes($animation-menu-slide-down) {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+$animation-scroll-icon: "animation-scroll-icon";
+@include keyframes($animation-scroll-icon) {
+	0% {
+		transform: translate(-380.91 -350.33);
+	}
+	100% {
+		transform: translate(-380.91 -380.33);
+	}
+}
