@@ -111,9 +111,9 @@
 						width: 25px;
 						position: relative;
 						> :nth-child(3) {
-							// position: absolute;
-							// @include animation(0s, 1s, $animation-scroll-icon, alternate);
-							// animation-iteration-count: infinite;
+							position: absolute;
+							@include animation(0s, 0.5s, $animation-scroll-icon, alternate);
+							animation-iteration-count: infinite;
 						}
 					}
 					&::before {

@@ -32,6 +32,7 @@ $(window).on("load", function () {
 			},
 		},
 	});
+	console.log(sliderWrapper.find(".scroll-animation .inline-svg>:last-child"));
 });
 
 /* SHOW - HIDE HEADER WHEN SCROLLING */

@@ -81,9 +81,9 @@ $animation-menu-slide-down: "animation-menu-slide-down";
 $animation-scroll-icon: "animation-scroll-icon";
 @include keyframes($animation-scroll-icon) {
 	0% {
-		transform: translate(-380.91 -350.33);
+		transform: translateY(-5%);
 	}
 	100% {
-		transform: translate(-380.91 -380.33);
+		transform: translateY(-45%);
 	}
 }
