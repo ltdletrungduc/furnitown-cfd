@@ -38,3 +38,11 @@
 		fill: $black !important;
 	}
 }
+
+.--yellow {
+	color: $main-yellow-color !important;
+	* {
+		color: $main-yellow-color !important;
+		fill: $main-yellow-color !important;
+	}
+}

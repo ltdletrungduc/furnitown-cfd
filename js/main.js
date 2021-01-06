@@ -1,8 +1,7 @@
+svgToInline(".inline-svg");
 $(window).on("load", function () {
-	svgToInline(".inline-svg");
 	closeSideNav();
 });
-
 const sliderWrapper = $(".slider__wrapper");
 $(window).on("load", function () {
 	//console.log(sliderWrapper);
@@ -13,7 +12,7 @@ $(window).on("load", function () {
 		wrapAround: true, //loop
 		draggable: true,
 		prevNextButtons: false,
-		pageDots: true,
+		pageDots: false,
 		autoPlay: false,
 		pauseAutoPlayOnHover: false,
 		lazyLoad: 1,
@@ -58,6 +57,11 @@ function headerStyling(window) {
 			header.removeClass("--active");
 		}
 	}
+	if (scrollTop == 0) {
+		header.addClass("--minimize");
+	} else {
+		header.removeClass("--minimize");
+	}
 	lastScollPos = scrollTop;
 }
 
@@ -94,12 +98,20 @@ function closeSideNav() {
 	sideNav.removeClass("--active");
 }
 
-const customRow = $(".custom-row");
-$(window).on("load", function () {
-	//console.log(sliderWrapper);
-	customRow.flickity({
+// CATEGORY - PRODUCT LIST
+const $category = $(".category__detail");
+// bind event listener first
+$category.on("ready.flickity", function () {
+	console.log("Flickity ready");
+});
+// initialize Flickity
+$category.each(function (index) {
+	let $carousel = $(this).find(".custom-row"),
+		$prevBtn = $(this).find(".control .btn__control.--prev"),
+		$nextBtn = $(this).find(".control .btn__control.--next");
+	$carousel.flickity({
 		cellSelector: ".cell",
-		cellAlign: "center",
+		cellAlign: "left",
 		contain: true,
 		wrapAround: true, //loop
 		draggable: true,
@@ -118,6 +130,16 @@ $(window).on("load", function () {
 				// 	my_dots = $(".slider__paging");
 				// default_dots.addClass("slider__dots");
 				// default_dots.appendTo(my_dots);
+
+				// BIND CONTROL
+				// previous
+				$prevBtn.on("click", function () {
+					$carousel.flickity("previous");
+				});
+				// next
+				$nextBtn.on("click", function () {
+					$carousel.flickity("next");
+				});
 			},
 			change: function (index) {
 				// let number = $(".slider__number span");
@@ -150,7 +172,7 @@ $productImages.flickity({
 	wrapAround: true, //loop
 	draggable: true,
 	prevNextButtons: false,
-	pageDots: false,
+	pageDots: true,
 	autoPlay: false,
 	pauseAutoPlayOnHover: false,
 	selectedAttraction: 0.01, //Higher attraction makes the slider move faster
@@ -163,6 +185,27 @@ $productImages.flickity({
 			// 	my_dots = $(".slider__paging");
 			// default_dots.addClass("slider__dots");
 			// default_dots.appendTo(my_dots);
+			// BIND CONTROL
+			let $prevBtn = $(".control .btn__control.--prev"),
+				$nextBtn = $(".control .btn__control.--next"),
+				$zoomBtn = $("main.product .image__viewer .zoom-btn"),
+				$exitFS = $("main.product .image__viewer .close-fullscreen");
+			// previous
+			$prevBtn.on("click", function () {
+				$productImages.flickity("previous");
+			});
+			// next
+			$nextBtn.on("click", function () {
+				$productImages.flickity("next");
+			});
+			// fullscreen
+			$zoomBtn.on("click", function () {
+				$productImages.flickity("viewFullscreen");
+			});
+			//exit fullscreen
+			$exitFS.on("click", function () {
+				$productImages.flickity("exitFullscreen");
+			});
 		},
 		change: function (index) {
 			// let number = $(".slider__number span");
@@ -170,3 +213,58 @@ $productImages.flickity({
 		},
 	},
 });
+
+// const fake_ajax_data = {
+// 	item1: {
+// 		name: "Ajax Item",
+// 		price: "50000",
+// 		"price-unit": "VND",
+// 		"img-src": "img/ultility_1.jpg",
+// 	},
+// 	item2: {
+// 		name: "Ajax Item",
+// 		price: "50000",
+// 		"price-unit": "VND",
+// 		"img-src": "img/ultility_2.jpg",
+// 	},
+// 	item3: {
+// 		name: "Ajax Item",
+// 		price: "50000",
+// 		"price-unit": "VND",
+// 		"img-src": "img/ultility_3.jpg",
+// 	},
+// 	item4: {
+// 		name: "Ajax Item",
+// 		price: "50000",
+// 		"price-unit": "VND",
+// 		"img-src": "img/ultility_4.jpg",
+// 	},
+// 	item5: {
+// 		name: "Ajax Item",
+// 		price: "50000",
+// 		"price-unit": "VND",
+// 		"img-src": "img/ultility_5.jpg",
+// 	},
+// 	item6: {
+// 		name: "Ajax Item",
+// 		price: "50000",
+// 		"price-unit": "VND",
+// 		"img-src": "img/ultility_6.jpg",
+// 	},
+// };
+
+// const $loadMoreBtn = $(".category__detail .load-more");
+// $loadMoreBtn.on("click", function () {
+// 	//call ajax
+// 	let condition = true;
+// 	if (condition) {
+// 		$(".category__detail .category__products").append("");
+// 	}
+// });
+
+// function appendHelper(ajax_data) {
+// 	let result = [];
+// 	ajax_data.each(function () {
+
+// 	});
+// }

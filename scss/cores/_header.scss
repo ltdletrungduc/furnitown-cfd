@@ -35,6 +35,9 @@ header.main-header {
 				flex-grow: 1;
 				a {
 					line-height: 0;
+					#logo {
+						width: 70px;
+					}
 					#logo > * {
 						fill: $white;
 					}
@@ -51,6 +54,8 @@ header.main-header {
 		display: none;
 		.menu-text {
 			display: flex;
+			align-items: center;
+			height: 100%;
 			span {
 				@include fontFormat(
 					18px,
@@ -67,7 +72,6 @@ header.main-header {
 				height: 4px;
 				background-color: $white;
 				position: relative;
-				margin-top: 10px;
 				margin-right: 10px;
 				&::before,
 				&::after {
@@ -82,7 +86,7 @@ header.main-header {
 					top: 10px;
 				}
 				&::after {
-					top: 20px;
+					top: -10px;
 				}
 			}
 		}
@@ -100,15 +104,33 @@ header.main-header {
 	}
 	@include tablet {
 		top: -110px;
-		height: 110px;
 		.menu-mobile {
 			height: 100%;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			.logo-container {
+				transform: scale(0.8);
+			}
 		}
 		.menu {
 			display: none;
+		}
+		&.--minimize {
+			width: 70px;
+			background-color: rgba($color: $main-blue-color, $alpha: 0.1);
+			.menu-mobile {
+				//padding: 0;
+				.menu-text {
+					span {
+						display: none;
+					}
+				}
+				.logo-container {
+					display: none;
+				}
+			}
+			transition: $time;
 		}
 	}
 	@include mobile {
@@ -125,7 +147,7 @@ header.static-header {
 	z-index: $header-z;
 	.logo-container {
 		position: absolute;
-		top: 70px;
+		top: 60px;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		.logo {

@@ -109,6 +109,10 @@ $logo-full-width: 90px;
 	&__primary {
 		padding: 7px 50px;
 		border: solid 1px $main-grey-color;
+		display: inline-block;
+		width: 220px;
+		@include midflex;
+		margin: 0 15px;
 		span {
 			@include fontFormat(
 				11px,
@@ -176,6 +180,9 @@ $logo-full-width: 90px;
 
 $arrow-svg-width: 22px;
 .link-btn {
+	* {
+		transition: $time;
+	}
 	i {
 		padding: 0 ($arrow-svg-width / 2) + 5px;
 		position: relative;
@@ -185,6 +192,7 @@ $arrow-svg-width: 22px;
 			top: 50%;
 			transform: translate(-50%, -50%);
 			width: $arrow-svg-width;
+			transition: $time;
 			> * {
 				fill: $black;
 			}

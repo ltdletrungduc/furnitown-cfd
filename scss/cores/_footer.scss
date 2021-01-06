@@ -1,13 +1,12 @@
 footer {
 	background-color: $main-blue-color;
 	.container {
-		height: 100%;
 		display: flex;
 		flex-direction: column;
 	}
 	.footer__slogan {
 		// FIXED HEIGHT
-		height: 356px;
+		height: 380px;
 		position: relative;
 		.slogan {
 			position: absolute;
@@ -27,7 +26,8 @@ footer {
 	}
 
 	.footer__main {
-		height: 530px;
+		height: 580px;
+		position: relative;
 		// @include midflexcol;
 		.logo-container {
 			width: 100%;
@@ -58,9 +58,47 @@ footer {
 			justify-content: center;
 			align-items: center;
 			.contact__item {
-				span {
+				p {
+					text-align: center;
 					@include fontFormat(11px, $main-font, 26px, $white, $upper-c, 0.05em);
+					&.--mobile {
+						display: none;
+					}
+					> .--tablet {
+						display: none;
+					}
 				}
+			}
+		}
+	}
+
+	.back-to-top {
+		position: absolute;
+		margin-right: -13px;
+		margin-bottom: 40px;
+		right: 0;
+		bottom: 0;
+		span {
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+			position: relative;
+			@include fontFormat(
+				10px,
+				$main-font,
+				26.05px,
+				#aaaaaa,
+				$upper-c,
+				0.2em,
+				normal
+			);
+			&::before {
+				position: absolute;
+				content: "";
+				width: 2px;
+				height: 130px;
+				left: 50%;
+				top: -140px;
+				background-color: #665d49;
 			}
 		}
 	}
@@ -68,20 +106,76 @@ footer {
 	}
 	@include tablet {
 		.footer__slogan {
+			height: auto;
 			@include midflexcol;
+			margin-top: 230px;
 			.slogan {
 				width: 100%;
 				position: static;
 				text-align: center;
 				margin-left: 0;
-				margin-top: 300px;
+				font-size: 30px;
+				line-height: 46px;
 			}
 			img {
+				padding-top: 50px;
 				position: static;
+			}
+		}
+		.footer__main {
+			height: auto;
+			.logo-container {
+				margin-top: 50px;
+				margin-bottom: 0;
+			}
+			.contact {
+				.contact__item {
+					padding: 20px 0;
+					p {
+						font-size: 18px;
+						line-height: 32px;
+						> .--tablet {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+		.back-to-top {
+			text-align: right;
+			position: static;
+			margin-top: 200px;
+			span {
+				font-size: 18px;
+				&::before {
+					height: 200px;
+					top: -210px;
+				}
 			}
 		}
 	}
 	@include mobile {
+		.footer__slogan {
+			margin-top: 130px;
+		}
+		.footer__main {
+			.logo-container {
+				&::before,
+				&::after {
+					width: 30%;
+				}
+			}
+			.contact {
+				.contact__item {
+					p {
+						display: none;
+						&.--mobile {
+							display: block;
+						}
+					}
+				}
+			}
+		}
 	}
 	@include mobile-xxs {
 	}
