@@ -14,20 +14,47 @@
 		<meta property="og:url" content="" />
 		<meta property="og:site_name" content="" />
 		<meta property="og:image" content="" />
-
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="img/favicon_io/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="img/favicon_io//favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="img/favicon_io//favicon-16x16.png"
+		/>
+		<link rel="manifest" href="img/favicon_io//site.webmanifest" />
 		<link rel="stylesheet" href="dest/style.min.css" />
 		<link rel="stylesheet" href="dest/stylelibs.min.css" />
 		<link rel="stylesheet" href="dest/fonts.css" />
 	</head>
 	<body class="pj">
+		<div id="loading">
+			<div class="loading-screen">
+				<span class="dot"></span>
+				<div class="dots">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
 		<header class="static-header">
 			<div class="social">
 				<ul class="social__list">
 					<li class="social__item">
-						<a href="#"><span>Furnitown</span></a>
+						<a href="/index.html"><span>Furnitown</span></a>
 					</li>
 					<li class="social__item">
-						<a href="#" class="link-btn">
+						<a href="#" class="link-btn fbsharelink">
 							<span class="--no-spacing">Share</span>
 							<i
 								><img
@@ -188,68 +215,6 @@
 					</div>
 				</div>
 			</section>
-			<nav>
-				<div class="social">
-					<ul class="social__list">
-						<li class="social__item">
-							<span>Furnitown</span>
-						</li>
-						<li class="social__item">
-							<span class="--no-spacing">Follow Us</span>
-							<a class="email" href="#"
-								><i
-									><img
-										src="img/email.svg"
-										alt=""
-										class="inline-svg email-icon --black" /></i
-							></a>
-							<a class="facebook" href="#"
-								><i
-									><img
-										src="img/facebook.svg"
-										alt=""
-										class="inline-svg facebook-icon --black" /></i
-							></a>
-						</li>
-					</ul>
-				</div>
-				<div class="nav__menu">
-					<div class="nav__close">
-						<div class="logo-container">
-							<img src="img/logo.svg" alt="" class="inline-svg logo" />
-						</div>
-						<div class="close-container" id="close-nav">
-							<div class="close-btn"></div>
-						</div>
-					</div>
-					<div class="nav__list">
-						<div class="nav__item">
-							<a href="#"><span>Furnitown</span></a>
-						</div>
-						<div class="nav__item">
-							<a href="#"><span>Sản Phẩm</span></a>
-						</div>
-						<div class="nav__item">
-							<a href="#"><span>Dịch vụ</span></a>
-						</div>
-						<div class="nav__item">
-							<a href="#"><span>Dự án</span></a>
-						</div>
-						<div class="nav__item">
-							<a href="#"><span>Liên hệ</span></a>
-						</div>
-						<div class="nav__item">
-							<div class="sub-item">
-								<a href="#"><span>FAQ</span></a>
-							</div>
-							<div class="sub-item">
-								<a href="#"><span>Tin tức</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-			<div id="overlay"></div>
 			<section class="project__list">
 				<div class="container">
 					<div class="project__wrapper">
@@ -264,7 +229,7 @@
 									lectus neque, vel convallis orci eleifend vel. Phasellus felis
 									lectus, eleifend eget quam eu
 								</p>
-								<a class="cell__btn link-btn">
+								<a class="cell__btn link-btn open-pswp">
 									<i
 										><img
 											src="img/arrow-icon.svg"
@@ -286,7 +251,7 @@
 									lectus neque, vel convallis orci eleifend vel. Phasellus felis
 									lectus, eleifend eget quam eu
 								</p>
-								<a class="cell__btn link-btn">
+								<a class="cell__btn link-btn open-pswp">
 									<i
 										><img
 											src="img/arrow-icon.svg"
@@ -308,7 +273,7 @@
 									lectus neque, vel convallis orci eleifend vel. Phasellus felis
 									lectus, eleifend eget quam eu
 								</p>
-								<a class="cell__btn link-btn">
+								<a class="cell__btn link-btn open-pswp">
 									<i
 										><img
 											src="img/arrow-icon.svg"
@@ -330,7 +295,7 @@
 									lectus neque, vel convallis orci eleifend vel. Phasellus felis
 									lectus, eleifend eget quam eu
 								</p>
-								<a class="cell__btn link-btn">
+								<a class="cell__btn link-btn open-pswp">
 									<i
 										><img
 											src="img/arrow-icon.svg"
@@ -352,7 +317,7 @@
 									lectus neque, vel convallis orci eleifend vel. Phasellus felis
 									lectus, eleifend eget quam eu
 								</p>
-								<a class="cell__btn link-btn">
+								<a class="cell__btn link-btn open-pswp">
 									<i
 										><img
 											src="img/arrow-icon.svg"
@@ -374,7 +339,7 @@
 									lectus neque, vel convallis orci eleifend vel. Phasellus felis
 									lectus, eleifend eget quam eu
 								</p>
-								<a class="cell__btn link-btn">
+								<a class="cell__btn link-btn open-pswp">
 									<i
 										><img
 											src="img/arrow-icon.svg"
@@ -398,6 +363,63 @@
 				</div>
 			</section>
 		</main>
+
+		<!-- PHOTOSWIPE -->
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="pswp__bg"></div>
+			<div class="pswp__scroll-wrap">
+				<div class="pswp__container">
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+				</div>
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class="pswp__top-bar">
+						<div class="pswp__counter"></div>
+						<button
+							class="pswp__button pswp__button--close"
+							title="Close (Esc)"
+						></button>
+						<button
+							class="pswp__button pswp__button--share"
+							title="Share"
+						></button>
+						<button
+							class="pswp__button pswp__button--fs"
+							title="Toggle fullscreen"
+						></button>
+						<button
+							class="pswp__button pswp__button--zoom"
+							title="Zoom in/out"
+						></button>
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+								<div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+					>
+						<div class="pswp__share-tooltip"></div>
+					</div>
+					<button
+						class="pswp__button pswp__button--arrow--left"
+						title="Previous (arrow left)"
+					></button>
+					<button
+						class="pswp__button pswp__button--arrow--right"
+						title="Next (arrow right)"
+					></button>
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- PHOTOSWIPE -->
 		<footer>
 			<div class="container">
 				<div class="footer__main">
@@ -440,7 +462,7 @@
 						</li>
 					</ul>
 					<div class="back-to-top">
-						<span>back to top</span>
+						<span class="unselectable">back to top</span>
 					</div>
 				</div>
 			</div>

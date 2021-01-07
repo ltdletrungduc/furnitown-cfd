@@ -14,20 +14,47 @@
 		<meta property="og:url" content="" />
 		<meta property="og:site_name" content="" />
 		<meta property="og:image" content="" />
-
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="img/favicon_io/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="img/favicon_io//favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="img/favicon_io//favicon-16x16.png"
+		/>
+		<link rel="manifest" href="img/favicon_io//site.webmanifest" />
 		<link rel="stylesheet" href="dest/style.min.css" />
 		<link rel="stylesheet" href="dest/stylelibs.min.css" />
 		<link rel="stylesheet" href="dest/fonts.css" />
 	</head>
 	<body class="hp">
+		<div id="loading">
+			<div class="loading-screen">
+				<span class="dot"></span>
+				<div class="dots">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
 		<header class="static-header">
 			<div class="social">
 				<ul class="social__list">
 					<li class="social__item">
-						<a href="#"><span>Furnitown</span></a>
+						<a href="/index.html"><span>Furnitown</span></a>
 					</li>
 					<li class="social__item">
-						<a href="#" class="link-btn">
+						<a href="#" class="link-btn fbsharelink">
 							<span class="--no-spacing">Share</span>
 							<i
 								><img
@@ -431,7 +458,7 @@
 						</li>
 					</ul>
 					<div class="back-to-top">
-						<span>back to top</span>
+						<span class="unselectable">back to top</span>
 					</div>
 				</div>
 			</div>

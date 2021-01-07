@@ -1,5 +1,6 @@
 svgToInline(".inline-svg");
 $(window).on("load", function () {
+	$("#loading").addClass("--loaded");
 	closeSideNav();
 });
 const sliderWrapper = $(".slider__wrapper");
@@ -269,3 +270,84 @@ $productImages.flickity({
 
 // 	});
 // }
+
+//FB SHARE
+$(".fbsharelink").on("click", function () {
+	alert("you are sharing this page " + window.location.href);
+});
+
+// PHOTOSWIPE
+let openPhotoSwipe = function () {
+	let pswpElement = document.querySelectorAll(".pswp")[0];
+
+	// build items array
+	let items = [
+		{
+			src: "img/ultility_1.jpg",
+			w: 800,
+			h: 600,
+		},
+		{
+			src: "img/ultility_2.jpg",
+			w: 800,
+			h: 600,
+		},
+		{
+			src: "img/ultility_3.jpg",
+			w: 800,
+			h: 600,
+		},
+		{
+			src: "img/ultility_4.jpg",
+			w: 800,
+			h: 600,
+		},
+		{
+			src: "img/ultility_5.jpg",
+			w: 800,
+			h: 600,
+		},
+		{
+			src: "img/ultility_6.jpg",
+			w: 800,
+			h: 600,
+		},
+		{
+			src: "img/ultility_7.jpg",
+			w: 800,
+			h: 600,
+		},
+		{
+			src: "img/ultility_8.jpg",
+			w: 800,
+			h: 600,
+		},
+	];
+
+	// define options (if needed)
+	let options = {
+		istory: true,
+		focus: false,
+		showAnimationDuration: 0,
+		hideAnimationDuration: 0,
+	};
+
+	// Initializes and opens PhotoSwipe
+	var gallery = new PhotoSwipe(
+		pswpElement,
+		PhotoSwipeUI_Default,
+		items,
+		options
+	);
+	gallery.init();
+};
+
+$(".open-pswp").on("click", openPhotoSwipe);
+
+$("footer .back-to-top").on("click", function () {
+	//1 second of animation time
+	//html works for FFX but not Chrome
+	//body works for Chrome but not FFX
+	//This strange selector seems to work universally
+	$("html, body").animate({ scrollTop: 0 }, 1000);
+});

@@ -14,6 +14,7 @@
 		<meta property="og:url" content="" />
 		<meta property="og:site_name" content="" />
 		<meta property="og:image" content="" />
+
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
@@ -36,7 +37,7 @@
 		<link rel="stylesheet" href="dest/stylelibs.min.css" />
 		<link rel="stylesheet" href="dest/fonts.css" />
 	</head>
-	<body class="about">
+	<body class="post">
 		<div id="loading">
 			<div class="loading-screen">
 				<span class="dot"></span>
@@ -51,7 +52,7 @@
 			<div class="social">
 				<ul class="social__list">
 					<li class="social__item">
-						<a href="#"><span>Furnitown</span></a>
+						<a href="/index.html"><span>Furnitown</span></a>
 					</li>
 					<li class="social__item">
 						<a href="#" class="link-btn fbsharelink">
@@ -65,6 +66,23 @@
 						</a>
 					</li>
 				</ul>
+			</div>
+			<div class="logo-container">
+				<a href="/index.html"
+					><img
+						id="logo"
+						src="img/logo_full.svg"
+						alt=""
+						class="inline-svg logo --full"
+				/></a>
+			</div>
+			<div class="back-btn">
+				<a href="/news.html" class="link-btn">
+					<span>Back</span>
+					<i
+						><img src="img/arrow-icon.svg" alt="" class="inline-svg arrow-icon"
+					/></i>
+				</a>
 			</div>
 		</header>
 		<header class="main-header">
@@ -185,72 +203,119 @@
 				/>
 			</div>
 		</div>
-		<main class="about-us">
-			<section class="about__banner banner">
+		<main class="post__main">
+			<section class="post__article">
 				<div class="container">
-					<div class="slogan">
-						<h1 class="slogan__title">Furnitown</h1>
-						<p class="slogan__text">
-							Nơi tìm thấy mảnh ghép nội thất còn thiếu cho ngôi nhà của bạn
-						</p>
+					<div class="image-container col-12">
+						<img src="img/slider_1.jpg" alt="" />
 					</div>
-					<div class="image-container">
-						<img src="img/about-us_1.jpg" alt="" />
-					</div>
-					<div class="text --align-center">
-						Với đội ngũ nhân viên luôn tâm huyết với nghề, cùng khả năng và tính
-						thẩm mỹ cao. sự cẩn trọng trong từng chi tiết đem đến sản phẩm chất
-						lượng và hoàn hảo nhất
+					<h1 class="post__title col-12 col-lg-9">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+						mollis tristique pellentesque.
+					</h1>
+					<p class="post__snippet col-12 col-lg-7">
+						Praesent mollis tristique pellentesque. Praesent mollis tristique
+						pellentesque. Praesent mollis tristique pellentesque.
+					</p>
+					<div class="post__createtime">14.07.2017 at 19:00.</div>
+					<div class="post__text col-12 col-lg-9">
+						Phasellus ullamcorper aliquet purus, vitae sollicitudin tortor
+						fermentum suscipit. Orci varius natoque penatibus et magnis dis
+						parturient montes, nascetur ridiculus mus. Nullam felis justo,
+						euismod sit amet libero at, condimentum pulvinar ex. Mauris sapien
+						lacus, pretium accumsan erat eu, hendrerit rutrum libero. Donec
+						tempus nibh et arcu interdum, quis sollicitudin tellus tristique.
+						Nunc velit justo, condimentum sed egestas id, ullamcorper eget
+						neque. Pellentesque habitant morbi tristique senectus et netus et
+						malesuada fames ac turpis egestas. Nam porttitor justo a augue
+						sodales, eu egestas velit ullamcorper. Curabitur facilisis, neque
+						sed ullamcorper dignissim, eros purus dapibus metus, nec malesuada
+						metus tortor at sem. Fusce pellentesque elementum neque, at ultrices
+						nibh laoreet in. Donec et porttitor ligula. Duis consectetur turpis
+						in consectetur ornare. Nunc tempus tristique tristique. In dolor
+						tellus, cursus eu iaculis vitae, sagittis feugiat dui.
 					</div>
 				</div>
 			</section>
-			<section class="about__content">
+			<section class="post__suggestion">
 				<div class="container">
-					<div class="group-1">
-						<div class="text --align-left">
-							Furnitown kiên trì trau dồi kiến thức,<br />
-							cập nhật xu thế cùng sự chắt lọc kinh nghiệm<br />
-							thực tế đời sống để hình thành nên những sản phẩm tinh tuý nhất,
-							thoả mãn mong muốn chắt chiu những vật dụng nội thất trang nhã
-							nhưng cũng không kém phần sang trọng trong ngôi nhà của bạn.
-						</div>
-						<div class="image-container">
-							<img src="img/about-us_2.jpg" alt="" />
-						</div>
-					</div>
-					<div class="group-2">
-						<div class="text --align-center">
-							“ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Praesent mollis tristique pellentesque. Praesent dapibus lectus
-							neque, vel convallis orci eleifend vel. Phasellus felis lectus,
-							eleifend eget quam eu, gravida sagittis urna. Sed nec nibh id
-							nulla feugiat sagittis. Maecenas hendrerit blandit pulvinar. ”
-						</div>
-						<div class="manager-message">
-							<div class="manager__name">MR. NGUYỄN VĂN A</div>
-							<div class="manager__position">Giám đốc Furnitown</div>
-							<div class="image-container">
-								<img class="manager__pic" src="img/manager.jpg" alt="" />
-								<img
-									class="manager__signature"
-									src="img/signature.png"
-									alt=""
-								/>
+					<div class="section__title">Các bài viết khác</div>
+					<div class="suggestion__wrapper">
+						<div class="row">
+							<div class="suggestion__item cell col-sm-12 col-md-6 col-lg-4">
+								<div class="image-container">
+									<img src="img/ultility_1.jpg" alt="" />
+								</div>
+								<div class="cell__content">
+									<h3 class="cell__title">MU xuống hạng vì Ed "Gỗ"</h3>
+									<div class="cell__description">
+										<p>
+											Praesent mollis tristique pellentesque. Praesent dapibus
+											lectus neque, vel convallis orci eleifend vel. Phasellus
+											felis lectus, eleifend eget quam eu
+										</p>
+									</div>
+									<a class="cell__btn link-btn" href="/post.html">
+										<i
+											><img
+												src="img/arrow-icon.svg"
+												alt=""
+												class="inline-svg arrow-icon"
+										/></i>
+										<span>Chi tiết</span>
+									</a>
+								</div>
 							</div>
-						</div>
-						<div class="text --align-center">
-							Hãy để Funitown hỗ trợ bạn trong việc hiện thực hoá những ý tưởng
-							vật dụng nội thất mang hơi thở của riêng bạn.
-						</div>
-					</div>
-					<div class="contact">
-						<div class="contact__action">
-							<a href="/contact.html" class="contact__btn btn__primary">
-								<span>Liên hệ đặt hàng</span>
-							</a>
-							<a href="/contact.html" class="contact__btn btn__primary">
-								<span>Liên hệ tư vấn</span>
-							</a>
+							<div class="suggestion__item cell col-sm-12 col-md-6 col-lg-4">
+								<div class="image-container">
+									<img src="img/ultility_2.jpg" alt="" />
+								</div>
+								<div class="cell__content">
+									<h3 class="cell__title">Messi đòi tăng lương lần thứ 6123</h3>
+									<div class="cell__description">
+										<p>
+											Praesent mollis tristique pellentesque. Praesent dapibus
+											lectus neque, vel convallis orci eleifend vel. Phasellus
+											felis lectus, eleifend eget quam eu
+										</p>
+									</div>
+									<a class="cell__btn link-btn" href="/post.html">
+										<i
+											><img
+												src="img/arrow-icon.svg"
+												alt=""
+												class="inline-svg arrow-icon"
+										/></i>
+										<span>Chi tiết</span>
+									</a>
+								</div>
+							</div>
+							<div class="suggestion__item cell col-sm-12 col-md-6 col-lg-4">
+								<div class="image-container">
+									<img src="img/ultility_3.jpg" alt="" />
+								</div>
+								<div class="cell__content">
+									<h3 class="cell__title">
+										Giá xăng giảm sâu!!! Chỉ còn 1.000.000 VNĐ / lít
+									</h3>
+									<div class="cell__description">
+										<p>
+											Praesent mollis tristique pellentesque. Praesent dapibus
+											lectus neque, vel convallis orci eleifend vel. Phasellus
+											felis lectus, eleifend eget quam eu
+										</p>
+									</div>
+									<a class="cell__btn link-btn" href="/post.html">
+										<i
+											><img
+												src="img/arrow-icon.svg"
+												alt=""
+												class="inline-svg arrow-icon"
+										/></i>
+										<span>Chi tiết</span>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
