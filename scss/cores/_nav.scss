@@ -1,0 +1,342 @@
+$nav-width: 505px;
+nav {
+	position: fixed;
+	top: 0;
+	left: -$nav-width;
+	width: $nav-width;
+	height: 100vh;
+	background-color: $light-black;
+	z-index: $nav-z;
+	transition: $time * 2;
+	border-left: solid 1px $light-black;
+	.social {
+		width: 100%;
+		.social__list {
+			padding-right: 35px;
+			.social__item {
+				a {
+					margin-left: 20px;
+					.facebook-icon {
+						width: 12px;
+						> * {
+							fill: $white;
+						}
+					}
+					.email-icon {
+						width: 22px;
+						> * {
+							fill: $white;
+						}
+					}
+					&:hover {
+						.facebook-icon,
+						.email-icon {
+							> * {
+								fill: rgba($color: $text-color, $alpha: 0.5);
+							}
+						}
+					}
+				}
+				span {
+					color: $white;
+				}
+			}
+		}
+	}
+	.nav__menu {
+		position: absolute;
+		top: 15%;
+		left: 0;
+		width: 100%;
+		height: 85%;
+		display: flex;
+		.nav__close {
+			width: 135px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			.logo-container {
+				height: 50px; // LINEHEIGHT + PADDINGTOP 1st ITEM
+				position: relative;
+				&::after {
+					position: absolute;
+					content: "";
+					width: 150%;
+					height: 2px;
+					bottom: -10px;
+					left: -25%;
+					background-color: $white;
+				}
+			}
+			.close-container {
+				margin-top: 20px; // PADDINGTOP 1st ITEM
+				.close-btn {
+					height: 45px;
+					width: 45px;
+					position: relative;
+					transform: rotate(45deg);
+					&::before,
+					&::after {
+						@include mid;
+						content: "";
+						background-color: $main-grey-color;
+						transition: $time;
+					}
+					&::before {
+						width: 100%;
+						height: 1px;
+					}
+					&::after {
+						width: 1px;
+						height: 100%;
+					}
+					&:hover {
+						&::before,
+						&::after {
+							background-color: $white;
+							transition: $time;
+						}
+						&::before {
+							width: 80%;
+						}
+						&::after {
+							height: 80%;
+						}
+					}
+				}
+			}
+		}
+		.nav__list {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			margin-right: 30px;
+			.nav__item {
+				padding-left: 35px;
+				padding-top: 40px;
+				padding-right: 35px;
+				width: 100%;
+				position: relative;
+				&::after {
+					//display: none;
+					position: absolute;
+					content: "";
+					width: 0;
+					height: 2px;
+					bottom: -10px;
+					left: -10px;
+					background-color: $white;
+					transition: $time * 2;
+				}
+				&:first-child {
+					padding-top: 20px;
+				}
+				&:not(:last-child) {
+					@include fillTextWithColor($main-grey-color, $white, $time * 3);
+				}
+				&:last-child {
+					&::after {
+						display: none;
+					}
+					display: flex;
+				}
+				&:hover {
+					&::after {
+						width: 100%;
+						left: 0;
+						transition: $time * 2;
+					}
+				}
+				> a {
+					span {
+						@include fontFormat(
+							26px,
+							$custom-font,
+							30px,
+							$main-grey-color,
+							$upper-c,
+							-0.025em
+						);
+					}
+				}
+				.sub-item {
+					a {
+						padding: 0 10px;
+						position: relative;
+						span {
+							@include fontFormat(
+								14px,
+								$semi-bold-font,
+								30px,
+								$main-grey-color,
+								$upper-c,
+								-0.025em
+							);
+						}
+						&::after {
+							position: absolute;
+							content: "";
+							height: 100%;
+							width: 2px;
+							top: 0;
+							right: 0;
+							background-color: $white;
+						}
+					}
+					&:first-child {
+						a {
+							padding-left: 0;
+						}
+					}
+					&:last-child {
+						a {
+							padding-right: 0;
+							&::after {
+								display: none;
+							}
+						}
+					}
+					&:hover {
+						a span {
+							transition: $time;
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.--active {
+		left: 0;
+		transition: $time;
+	}
+	@include desktop {
+	}
+	@include tablet {
+	}
+	@include mobile {
+		left: -100%;
+		width: 100%;
+	}
+	@include mobile-xxs {
+	}
+}
+
+#overlay {
+	position: fixed;
+	z-index: $header-z - 1;
+	top: 0;
+	left: -100vw;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba($color: #000000, $alpha: 0.7);
+	opacity: 0;
+	transition: opacity $time;
+	&.--active {
+		left: 0;
+		opacity: 1;
+		transition: opacity $time;
+	}
+}
+
+#toggle-btn {
+	position: absolute;
+	top: 270px;
+	left: 0;
+	width: 180px;
+	height: 180px;
+	border: 0.1px solid;
+	border-color: rgba($color: $main-grey-color, $alpha: 0.5);
+	background-color: $main-blue-color;
+	z-index: $header-z;
+	transition: $time;
+	@include midflexcol;
+	.logo-container {
+		margin-bottom: 30px;
+		position: relative;
+		&.--hover {
+			display: none;
+			margin-bottom: 0;
+		}
+	}
+	.burger {
+		width: $logo-width;
+		height: 2px;
+		background-color: $white;
+		position: relative;
+		&::before,
+		&::after {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			content: "";
+			background-color: $white;
+		}
+		&::before {
+			bottom: 10px;
+		}
+		&::after {
+			bottom: 20px;
+		}
+	}
+	span {
+		display: none;
+	}
+	&:hover,
+	&.--active {
+		width: 207px;
+		background-color: $white;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: flex-end;
+		padding-bottom: 60px;
+		transition: $time;
+		.logo-container {
+			display: none;
+			&.--hover {
+				display: block;
+				position: relative;
+				&::after {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 1px;
+					content: "";
+					background-color: $black;
+					@include animation(0, 0.5s, $animation-fill-width, ease-out);
+				}
+			}
+		}
+		.burger {
+			display: none;
+		}
+		span {
+			$local-line-height: 30px;
+			display: block;
+			margin-bottom: -$local-line-height/2;
+			@include fontFormat(
+				$fz-text,
+				$main-font,
+				$local-line-height,
+				$black,
+				$upper-c,
+				0,
+				bold
+			);
+		}
+	}
+	@include desktop {
+	}
+	@include tablet {
+		position: fixed;
+		top: -180px;
+		left: -180px;
+	}
+	@include mobile {
+	}
+	@include mobile-xxs {
+	}
+}

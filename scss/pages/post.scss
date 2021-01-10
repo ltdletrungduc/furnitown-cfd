@@ -1,0 +1,125 @@
+body.post {
+	main.post__main {
+		.post__article {
+			margin-bottom: 125px;
+			.container {
+				padding: 0 45px;
+				padding-top: 180px;
+			}
+			.image-container {
+				position: relative;
+				height: 470px;
+				overflow: hidden;
+				img {
+					@include mid;
+					min-width: 100%;
+					min-height: 100%;
+				}
+			}
+			.post__title {
+				margin-top: 70px;
+				padding: 0;
+				@include fontFormat(
+					20px,
+					$custom-font,
+					32px,
+					$text-color,
+					$upper-c,
+					0.1em,
+					500
+				);
+			}
+			.post__snippet {
+				margin-top: 30px;
+				padding: 0;
+				@include fontFormat(
+					12px,
+					$main-font,
+					32px,
+					$text-color,
+					$upper-c,
+					0.1em,
+					bold
+				);
+			}
+			.post__createtime {
+				margin-top: 25px;
+				@include fontFormat(12px, $main-font, 32px, #212121, none, 0.1em);
+				font-style: italic;
+			}
+			.post__text {
+				margin-top: 30px;
+				padding: 0;
+				@include fontFormat(12px, $main-font, 22px, $text-color, none, 0.1em);
+			}
+		}
+		.post__suggestion {
+			.container {
+				padding: 0 30px;
+			}
+			.section__title {
+				margin-bottom: 40px;
+				width: 100%;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+				@include fontFormat(
+					11px,
+					$main-font,
+					32px,
+					#212121,
+					$upper-c,
+					0.1em,
+					bold
+				);
+				&::before,
+				&::after {
+					position: absolute;
+					height: 1px;
+					width: 40%;
+					content: "";
+					background-color: $text-color;
+				}
+				&::before {
+					left: 0;
+					top: 50%;
+				}
+				&::after {
+					right: 0;
+					top: 50%;
+				}
+				@include tablet {
+					&::before,
+					&::after {
+						width: 30%;
+					}
+				}
+				@include mobile {
+					&::before,
+					&::after {
+						width: 20%;
+					}
+				}
+			}
+			.suggestion__wrapper {
+				width: 100%;
+				.row {
+				}
+				.cell {
+					height: 450px;
+					.cell__title {
+						@include fontFormat(
+							12px,
+							$main-font,
+							20px,
+							$text-color,
+							$upper-c,
+							-0.025em,
+							bold
+						);
+					}
+				}
+			}
+		}
+	}
+}
