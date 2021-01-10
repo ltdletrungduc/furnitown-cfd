@@ -37,8 +37,13 @@ $(window).on("load", function () {
 });
 
 /* SHOW - HIDE HEADER WHEN SCROLLING */
+
 const header = $("header.main-header"),
 	toggleBtn = $("#toggle-btn");
+// $(window).on("load", function () {
+// 	header.addClass("--active");
+// 	header.removeClass("--minimize");
+// });
 let lastScollPos = 0;
 $(document).on("scroll", function () {
 	headerStyling($(this));
@@ -93,11 +98,13 @@ $(document).on("keydown", function (event) {
 function openSideNav() {
 	sideNav.addClass("--active");
 	overlay.addClass("--active");
+	$("main, footer").addClass("nav-active");
 }
 
 function closeSideNav() {
 	overlay.removeClass("--active");
 	sideNav.removeClass("--active");
+	$("main, footer").removeClass("nav-active");
 }
 
 // CATEGORY - PRODUCT LIST
