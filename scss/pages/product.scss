@@ -230,13 +230,19 @@
 			grid-template-rows: 540px;
 			column-gap: 30px;
 			width: 100%;
-			overflow: hidden;
+			//overflow: hidden;
 			margin-bottom: 50px;
 			.suggestion__item {
 				position: relative;
+				.image-container {
+					> img {
+						filter: grayscale(1);
+					}
+				}
 				.cell__content {
 					flex-grow: 1;
 					justify-content: space-evenly;
+					padding: 0 10px;
 				}
 				.cell__description {
 					display: flex;
@@ -259,12 +265,11 @@
 				.cell__btn {
 					width: 100%;
 					&:hover {
-						span {
-							padding-left: 200px;
-							color: $main-grey-color;
-						}
-						i > .arrow-icon {
-							left: 300px;
+						&:hover {
+							span {
+								color: $white;
+								font-weight: bolder;
+							}
 						}
 					}
 				}
@@ -277,6 +282,26 @@
 					top: 0;
 					right: -15px;
 					opacity: 0.5;
+				}
+				&:hover {
+					box-shadow: 10px 15px 33px 9px #555;
+					transition: background-color $time;
+					background-color: #6d5019;
+					.image-container {
+						> img {
+							transition: filter $time;
+							filter: grayscale(0);
+						}
+					}
+					.cell__title,
+					.cell__description > *,
+					.cell__btn > span {
+						transition: color $time;
+						color: $white;
+					}
+					.cell__btn .arrow-icon > * {
+						fill: $white;
+					}
 				}
 			}
 		}
@@ -397,13 +422,8 @@
 				grid-template-columns: 1fr;
 				row-gap: 30px;
 				.suggestion__item {
-					border: solid 1px;
-					border-color: rgba($color: $main-grey-color, $alpha: 0.5);
 					&::after {
 						display: none;
-					}
-					.cell__content {
-						padding: 0 10px;
 					}
 				}
 			}
@@ -437,23 +457,24 @@
 
 .pdt {
 	> header.static-header {
-		position: static;
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 120px;
 		@include mobile {
-			height: 100px;
-			.social {
-				display: none;
-			}
-			.back-btn {
-				display: none;
-			}
-		}
-	}
-	@media only screen and (max-width: 1365px) {
-		#toggle-btn {
+			// height: 60px;
+			// .logo-container {
+			// 	top: 50%;
+			// 	a #logo {
+			// 		width: 60px;
+			// 	}
+			// }
+			// .social {
+			// 	display: none;
+			// }
+			// .back-btn {
+			// 	display: none;
+			// }
 			display: none;
 		}
 	}

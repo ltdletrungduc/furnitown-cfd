@@ -79,37 +79,42 @@ body.contact {
 						justify-content: space-between;
 						height: auto;
 						grid-row: 2 / span 2;
+						label {
+							margin-top: 0;
+						}
 					}
 				}
-				.submit-btn {
-					position: absolute;
-					right: 0;
-					bottom: -100px;
-					z-index: $default-z + 1;
-					width: 84px;
-					height: 34px;
-					border: 1px solid #7c6e4f;
-					background-color: $text-color;
+			}
+			.submit-btn {
+				position: relative;
+				margin-left: auto;
+				margin-right: 0;
+				margin-top: 50px;
+				margin-bottom: 50px;
+				z-index: $default-z + 1;
+				width: 84px;
+				height: 34px;
+				border: 1px solid #7c6e4f;
+				background-color: $text-color;
+				transition: $time;
+				@include midflex;
+				span {
 					transition: $time;
-					@include midflex;
+					@include fontFormat(
+						10px,
+						$main-font,
+						7.05px,
+						$white,
+						$upper-c,
+						0,
+						bold
+					);
+				}
+				&:hover {
+					border-color: $main-yellow-color;
+					background-color: $white;
 					span {
-						transition: $time;
-						@include fontFormat(
-							10px,
-							$main-font,
-							7.05px,
-							$white,
-							$upper-c,
-							0,
-							bold
-						);
-					}
-					&:hover {
-						border-color: $main-yellow-color;
-						background-color: $white;
-						span {
-							color: $text-color;
-						}
+						color: $text-color;
 					}
 				}
 			}
@@ -136,19 +141,24 @@ body.contact {
 			label {
 				margin: 10px 0;
 			}
+			input {
+				line-height: 40px;
+			}
 			input,
 			textarea {
 				margin: 10px 0;
 				background: none;
 				border: none;
 				border-bottom: 1px solid #7c6e4f;
-				line-height: 20px;
 				outline: none;
 				color: $white;
 				font-size: 40px;
 			}
 			textarea {
+				height: 142px;
+				line-height: calc(142px / 3);
 				margin-bottom: 0;
+				resize: none;
 			}
 		}
 		@include tablet {

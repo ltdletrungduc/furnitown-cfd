@@ -150,6 +150,11 @@ header.static-header {
 	position: absolute;
 	top: 0;
 	left: 0;
+	// position: static;
+	// display: flex;
+	// justify-content: space-between;
+	// align-items: center;
+	height: 100px;
 	width: 100%;
 	z-index: $header-z;
 	.logo-container {
@@ -157,7 +162,8 @@ header.static-header {
 		top: 60px;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		.logo {
+		#logo {
+			width: $logo-full-width;
 			> * {
 				fill: $black;
 			}
@@ -165,7 +171,7 @@ header.static-header {
 	}
 	.back-btn {
 		position: absolute;
-		top: 55px;
+		top: 35px;
 		right: 0;
 		padding-right: 45px;
 		a {
@@ -180,7 +186,7 @@ header.static-header {
 					30px,
 					$black,
 					$upper-c,
-					0.1em,
+					0,
 					bold
 				);
 			}

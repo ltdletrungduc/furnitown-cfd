@@ -15,7 +15,7 @@ $logo-full-width: 90px;
 
 .social {
 	position: absolute;
-	top: 50px;
+	top: 35px;
 	left: 0;
 	width: 230px;
 	.social__list {
@@ -93,6 +93,7 @@ $logo-full-width: 90px;
 		height: 64px;
 		border-radius: 50%;
 		background-color: #33403e;
+		transition: $time;
 		position: relative;
 		i > svg {
 			@include mid;
