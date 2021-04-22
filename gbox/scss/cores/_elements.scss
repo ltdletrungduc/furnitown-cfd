@@ -1,0 +1,29 @@
+.--align-left {
+	text-align: left !important;
+}
+
+.--align-right {
+	text-align: right !important;
+}
+
+.--align-center {
+	text-align: center !important;
+}
+
+.--no-spacing {
+	letter-spacing: 0 !important;
+}
+
+.unselectable {
+	-webkit-touch-callout: none !important;
+	-webkit-user-select: none !important;
+	-khtml-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important;
+	cursor: default;
+}
+
+.--italic {
+	font-style: italic !important;
+}

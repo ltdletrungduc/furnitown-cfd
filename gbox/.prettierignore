@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all these files:
+*.html
+*.min.css
+*.min.js

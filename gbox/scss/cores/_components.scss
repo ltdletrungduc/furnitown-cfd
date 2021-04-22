@@ -1,0 +1,279 @@
+.text {
+	@include fontFormat($fz-text, Arial, 22px, $text-color, initial, -0.025em);
+}
+
+// PROJECTS GRID
+main .projects {
+	&__filter {
+		@include midflex;
+		margin-bottom: 10px;
+		.type {
+			padding: 0 20px;
+			cursor: pointer;
+			transition: color $time;
+			@include fontFormat($fz-text, $semib-font, 30.48px, #898989, $upper-c, 0);
+			&.--active,
+			&:hover {
+				color: $text-color;
+			}
+		}
+	}
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: 350px;
+		justify-items: center;
+		gap: 30px 20px;
+		margin-bottom: 35px;
+	}
+	.bottom-bar {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		position: relative;
+		padding-bottom: var(--local-pd);
+	}
+
+	@include tablet {
+		&__wrapper {
+			grid-template-columns: 1fr 1fr;
+			margin-bottom: 25px;
+		}
+	}
+
+	@include mobile {
+		.container {
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&__wrapper {
+			grid-template-columns: 1fr;
+			row-gap: 10px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// PROJECT IN A CELL
+a.project {
+	width: 100%;
+	max-width: $xxs-min;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.project__image {
+		width: 100%;
+		height: 190px;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 30px;
+		img {
+			@include mid;
+			min-width: 100%;
+			min-height: 100%;
+			object-fit: cover;
+			transition: $time;
+		}
+	}
+	.project__name {
+		text-align: center;
+		position: relative;
+		margin-bottom: 10px;
+		@include fontFormat(
+			$fz-text,
+			$bold-font,
+			30.48px,
+			$text-color,
+			$upper-c,
+			0
+		);
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 15px;
+			height: 3px;
+			background-color: $main-yellow-color;
+		}
+	}
+	.project__info {
+		width: 100%;
+		.group {
+			display: grid;
+			grid-template-columns: 47.5% 5% 47.5%;
+			.label,
+			.split,
+			.value {
+				@include fontFormat(
+					$fz-text,
+					$main-font,
+					20px,
+					$text-color,
+					$capitalize,
+					0
+				);
+			}
+			.label {
+				text-align: right;
+			}
+			.split {
+				text-align: center;
+			}
+			.value {
+				text-align: left;
+			}
+		}
+	}
+	&:hover {
+		.project__image {
+			img {
+				transform: translate(-50%, -50%) scale(1.1);
+			}
+		}
+	}
+}
+
+.introduce {
+	text-align: center;
+	position: relative;
+	z-index: $default-z;
+	.welcome {
+		display: flex;
+		flex-direction: column;
+		span {
+			@include fontFormat(
+				14px,
+				$light-font,
+				22px,
+				$text-color,
+				$upper-c,
+				0.2em
+			);
+		}
+	}
+	h1 {
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: transparent;
+		position: relative;
+		@include fontFormat(
+			20px,
+			$bold-font,
+			30.48px,
+			$main-grey-color,
+			$upper-c,
+			0.3em
+		);
+	}
+	.text {
+		@include fontFormat($fz-text, Arial, 22px, $text-color, initial, -0.025em);
+		width: calc(100% / 16 * 12 + 12px);
+		margin: auto;
+		position: relative;
+		strong {
+			font-weight: bold;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: calc(var(--local-pd) * -1);
+			left: 50%;
+			@include transform(translateX(-50%) scale(1));
+			width: 0;
+			height: 1px;
+			background-color: $black;
+			@include keyframes(scaling-width) {
+				0% {
+					width: 0;
+				}
+				100% {
+					width: 320px;
+				}
+			}
+			@include animation(3600ms, $time * 2, scaling-width);
+		}
+	}
+}
+
+.button {
+	cursor: pointer;
+	&.--special {
+		$button-size: 100px; // SQUARE SHAPE
+		$main-color: $main-grey-color;
+		$hover-color: $main-yellow-color;
+		width: $button-size;
+		height: $button-size;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $main-color;
+		border-radius: 8px;
+		transition: $time;
+		span {
+			transition: $time;
+			&:first-child {
+				@include fontFormat(
+					24px,
+					$extra-bold-font,
+					30.48px,
+					$hover-color,
+					$upper-c,
+					-0.025em
+				);
+			}
+			&:last-child {
+				@include fontFormat(
+					27px,
+					$extra-bold-font,
+					30.48px,
+					$hover-color,
+					$upper-c,
+					-0.025em
+				);
+			}
+		}
+		&:hover {
+			background-color: $hover-color;
+			span {
+				color: $text-color;
+			}
+		}
+		&.--reverse {
+			background-color: $hover-color;
+			span {
+				color: $text-color;
+			}
+			&:hover {
+				background-color: $main-color;
+				span {
+					color: $hover-color;
+				}
+			}
+		}
+	}
+	&.--more {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include mid;
+		span {
+			@include fontFormat(
+				$fz-text,
+				$semib-font,
+				30.48px,
+				$text-color,
+				$upper-c,
+				0
+			);
+		}
+		.inline-svg {
+			width: 15px;
+		}
+	}
+}

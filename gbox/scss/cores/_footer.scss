@@ -1,0 +1,234 @@
+footer {
+	width: 100%;
+
+	.info {
+		padding-top: var(--local-pd);
+		padding-bottom: var(--local-pd);
+		.container {
+			padding: 0 35px;
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				top: calc(var(--local-pd) * -1);
+				left: 15px;
+				width: calc(100% - 30px);
+				height: 1px;
+				background-color: $black;
+			}
+		}
+		&__wrapper {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+		&__item {
+			.label,
+			.content {
+				@include fontFormat(
+					$fz-text,
+					$main-font,
+					30.48px,
+					$text-color,
+					$upper-c,
+					0.1em
+				);
+			}
+			.content {
+				display: flex;
+				> * {
+					padding-right: 0.25em;
+				}
+			}
+		}
+	}
+	.contact {
+		background-color: $main-yellow-color;
+		padding-bottom: var(--local-pd);
+		.container {
+			padding: 0 35px;
+		}
+		&__wrapper {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 20px;
+			padding-top: 20px;
+			margin-bottom: 50px;
+		}
+		&__message {
+			display: flex;
+			align-items: center;
+			@include fontFormat(
+				$fz-text,
+				$main-font,
+				30.48px,
+				$text-color,
+				$upper-c,
+				0.1em
+			);
+		}
+		&__form {
+			width: 100%;
+			position: relative;
+			.form {
+				width: 100%;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 20px;
+				&__group {
+					display: flex;
+					flex-direction: column;
+					label {
+						position: relative;
+						@include fontFormat(
+							12px,
+							$main-font,
+							66px,
+							$text-color,
+							$capitalize,
+							0.1em
+						);
+						&::before {
+							content: "";
+							position: absolute;
+							bottom: -18px;
+							left: 0;
+							width: 100%;
+							height: 1px;
+							background-color: $text-color;
+						}
+					}
+					.form__control {
+						outline: none;
+						background: none;
+						border: none;
+						padding: 0;
+						font-family: $bold-font;
+						font-size: 12px;
+						line-height: 18px;
+						font-weight: bold;
+						text-transform: $upper-c;
+						&.--textarea {
+							&::-webkit-scrollbar {
+								width: 0;
+							}
+							resize: none;
+						}
+					}
+					&:last-child {
+						grid-area: 3 / 1 / 4 / span 2;
+						label {
+							&::after {
+								content: "";
+								position: absolute;
+								bottom: -36px;
+								left: 0;
+								width: 100%;
+								height: 1px;
+								background-color: $text-color;
+							}
+						}
+					}
+				}
+			}
+			.submit-btn {
+				position: absolute;
+				bottom: -30px;
+				right: 0;
+				display: inline-block;
+				padding-left: 12px;
+				padding-right: 12px;
+				background-color: #231f20;
+				span {
+					@include fontFormat(10px, $bold-font, 20px, $white, $upper-c, 0);
+				}
+			}
+		}
+		.back-to-top {
+			@include midflex;
+			.inline-svg {
+				width: 20px;
+				transform: rotate(-90deg);
+			}
+		}
+		.copy-right {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			> div {
+				@include fontFormat(10px, auto, 30.48px, $text-color, $upper-c, 0.1em);
+				&:last-child {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	@include tablet {
+		.contact {
+			.container {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	}
+
+	@include mobile {
+		.info {
+			.container {
+				padding-left: 15px;
+				padding-right: 15px;
+				&::after {
+					left: 0;
+					width: 100%;
+				}
+			}
+			&__wrapper {
+				grid-template-columns: 1fr;
+			}
+			&__item {
+				@include midflex;
+				flex-direction: column;
+			}
+		}
+		.contact {
+			.container {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			&__wrapper {
+				grid-template-columns: 1fr;
+			}
+			&__message {
+				width: 100%;
+				text-align: center;
+				justify-content: center;
+			}
+			&__form {
+				.form {
+					grid-template-columns: 1fr;
+					&__group {
+						&:last-child {
+							grid-area: initial;
+						}
+					}
+				}
+			}
+			.copy-right {
+				> div:last-child {
+					text-align: center;
+					font-size: 8px;
+				}
+			}
+		}
+	}
+
+	@include mobile-xxs {
+		.contact {
+			&__message {
+				font-size: 10px;
+			}
+		}
+	}
+}

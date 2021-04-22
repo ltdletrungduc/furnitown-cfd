@@ -1,0 +1,27 @@
+.index {
+	main {
+		.introduce {
+			h1 {
+				&::after {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					top: 50%;
+					left: 0;
+					transform: translate(0, -50%);
+					width: calc(100% - 0.3em);
+					height: 15px;
+					background-color: $main-yellow-color;
+				}
+			}
+		}
+
+		@include mobile {
+			.introduce {
+				.text {
+					display: none;
+				}
+			}
+		}
+	}
+}

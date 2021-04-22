@@ -1,0 +1,25 @@
+// IMPORT CORE FILES
+@import "cores/reset";
+@import "cores/variables";
+@import "cores/mixins";
+@import "cores/libs";
+@import "cores/components";
+@import "cores/elements";
+@import "cores/layouts";
+@import "cores/bootstrap_mini";
+@import "cores/loading";
+/* Navigation, header, footer*/
+@import "cores/header";
+@import "cores/footer";
+@import "cores/nav";
+
+// IMPORT PAGES
+@import "pages/index";
+@import "pages/project";
+@import "pages/studios";
+@import "pages/studio";
+@import "pages/rental";
+@import "pages/cafe";
+@import "pages/allworks";
+@import "pages/about";
+@import "pages/contact";

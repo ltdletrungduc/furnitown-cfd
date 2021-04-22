@@ -1,0 +1,214 @@
+.rental {
+	$local-gap: 20px;
+	$local-pd-top: 70px;
+	&__form-wrapper {
+		// padding-left: $local-gap;
+		// padding-right: $local-gap;
+		display: grid;
+		grid-template-columns: repeat(16, 1fr);
+		gap: $local-gap;
+		position: relative;
+	}
+	.studio__content {
+		grid-column: 1 / span 4;
+		padding-top: $local-pd-top;
+		padding-left: 20px;
+		padding-right: 20px;
+		height: 640px;
+		display: flex;
+		flex-direction: column;
+		background-color: $main-grey-color;
+		position: sticky;
+		top: 0;
+		.studio__number {
+			width: 120px;
+			height: 120px;
+			background-color: $main-yellow-color;
+			text-align: center;
+			.label {
+				@include fontFormat(
+					11px,
+					$main-font,
+					20px,
+					$text-color,
+					$upper-c,
+					0,
+					bold
+				);
+				padding-top: 20px;
+			}
+			.number {
+				@include fontFormat(60px, $din-b-font, 100px, $text-color, $upper-c, 0);
+				margin-top: -20px;
+			}
+		}
+		h1 {
+			padding-top: 30px;
+			padding-bottom: 30px;
+			@include fontFormat(
+				32px,
+				$extra-bold-font,
+				30.48px,
+				$white,
+				$capitalize,
+				-0.025px
+			);
+		}
+		.studio__info {
+			.label {
+				@include fontFormat(12px, $main-font, 30.48px, $white, $upper-c, 0.2em);
+			}
+			.text {
+				@include fontFormat(14px, $main-font, 20px, $white, initial, 0);
+			}
+		}
+	}
+	.form {
+		grid-column: span 12;
+		padding-left: calc(100% / 16 + 10px);
+		padding-top: 70px;
+		&__customer,
+		&__studio {
+			display: grid;
+			$local-width: calc(100% / 3);
+			grid-template-columns: $local-width $local-width;
+			column-gap: calc(100% / 12);
+		}
+		&__label {
+			grid-column: span 2;
+			margin-bottom: 15px;
+			@include fontFormat(
+				28px,
+				$extra-bold-font,
+				30.48px,
+				$main-grey-color,
+				initial,
+				-0.025em
+			);
+			&::first-letter {
+				text-transform: $upper-c;
+			}
+		}
+		&__customer {
+			margin-bottom: 40px;
+		}
+		&__group {
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: flex-end;
+			position: relative;
+			label,
+			&-label {
+				margin-bottom: -10px;
+				position: relative;
+				z-index: 1;
+				@include fontFormat(
+					$fz-text,
+					$main-font,
+					66px,
+					$text-color,
+					$capitalize,
+					0,
+					600
+				);
+			}
+			input {
+				width: 100%;
+				border-top: none;
+				border-left: none;
+				border-right: none;
+				border-width: 1px;
+				border-color: rgba($color: $text-color, $alpha: 0.2);
+				padding: 0 0 2px;
+				font-family: $main-font;
+				font-size: 12px;
+				text-transform: $upper-c;
+				font-weight: bold;
+				line-height: 1;
+				transition: $time;
+				position: relative;
+				z-index: 2;
+				&:focus {
+					outline: none;
+					border-color: rgba($color: $text-color, $alpha: 1);
+					// + label {
+					// 	color: rgba($color: $text-color, $alpha: 1);
+					// 	font-weight: bold;
+					// }
+				}
+			}
+			small {
+				color: rgba($color: $text-color, $alpha: 0.5);
+			}
+			textarea {
+				width: 100%;
+				border-width: 1px;
+				border-color: rgba($color: $text-color, $alpha: 0.2);
+				resize: none;
+				margin-top: 14px;
+				padding: 2px 0;
+				font-family: $main-font;
+				font-size: 12px;
+				text-transform: $upper-c;
+				font-weight: bold;
+				&::-webkit-scrollbar {
+					width: 0;
+				}
+				&:focus {
+					outline: none;
+					border-color: rgba($color: $text-color, $alpha: 1);
+					// + label {
+					// 	color: rgba($color: $text-color, $alpha: 1);
+					// 	font-weight: bold;
+					// }
+				}
+			}
+			&.--span {
+				grid-column: span 2;
+			}
+		}
+		&__studio {
+			.input-wrapper {
+				display: flex;
+				align-items: center;
+				input {
+					&[type="radio"] {
+						display: none;
+					}
+					&[type="date"] {
+					}
+					&:checked {
+						+ label {
+							color: $text-color;
+							background-color: $main-yellow-color;
+						}
+					}
+				}
+				label {
+					display: block;
+					font-family: $din-b-font;
+					font-size: 24px;
+					line-height: 40px;
+					letter-spacing: -0.025em;
+					width: 40px;
+					height: 40px;
+					margin-bottom: 0;
+					margin-right: 20px;
+					color: rgba($color: $main-grey-color, $alpha: 0.8);
+					background-color: $text-color;
+					@include midflex;
+					transition: $time;
+					z-index: 2;
+					&:hover {
+						color: $text-color;
+						background-color: $main-yellow-color;
+						border: solid 1px $black;
+					}
+				}
+			}
+			.form-group {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
