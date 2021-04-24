@@ -31,7 +31,7 @@
                     <div class="burger">
                         <span></span>
                     </div>
-                    <a href="/" class="logo-link">
+                    <a href="./" class="logo-link">
                         <img src="img/icon/logo.svg" alt="GBox Studio" class="inline-svg logo" />
                     </a>
                     <a href="#" class="fb-link">
@@ -43,16 +43,16 @@
                 <div class="container">
                     <div class="navigation__wrapper">
                         <div class="navigation__item">
-                            <a href="/about.html"><span>about</span></a>
+                            <a href="about.html"><span>about</span></a>
                         </div>
                         <div class="navigation__item --center">
-                            <a href="/studio.html"><span>studio</span></a>
-                            <a href="/rental.html"><span>rental</span></a>
-                            <a href="/cafe.html"><span>cafe</span></a>
-                            <a href="/work.html"><span>work</span></a>
+                            <a href="studios.html"><span>studio</span></a>
+                            <a href="rental.html"><span>rental</span></a>
+                            <a href="cafe.html"><span>cafe</span></a>
+                            <a href="allworks.html"><span>work</span></a>
                         </div>
                         <div class="navigation__item">
-                            <a href="/contact.html"><span>contact</span></a>
+                            <a href="contact.html"><span>contact</span></a>
                         </div>
                     </div>
                 </div>
@@ -61,28 +61,38 @@
         <nav>
             <div class="container">
                 <div class="navigation__wrapper">
-                    <a class="navigation__item" href="/about.html">
+                    <a class="navigation__item" href="about.html">
                         <span>about</span>
                     </a>
-                    <a class="navigation__item" href="/studio.html">
+                    <a class="navigation__item" href="studios.html">
                         <span>studio</span>
                     </a>
-                    <a class="navigation__item" href="/rental.html">
+                    <a class="navigation__item" href="rental.html">
                         <span>rental</span>
                     </a>
-                    <a class="navigation__item" href="/cafe.html">
+                    <a class="navigation__item" href="cafe.html">
                         <span>cafe</span>
                     </a>
-                    <a class="navigation__item" href="/work.html">
+                    <a class="navigation__item" href="allworks.html">
                         <span>work</span>
                     </a>
-                    <a class="navigation__item" href="/contact.html">
+                    <a class="navigation__item" href="contact.html">
                         <span>contact</span>
                     </a>
                 </div>
             </div>
         </nav>
-        <div class="overlay"></div>
+        <div class="overlay">
+            <div class="wrapper">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+                <span>Loading</span>
+            </div>
+        </div>
         <main>
             <section class="info section-gap">
                 <div class="container">
@@ -125,7 +135,11 @@
                         </div>
                         <div class="info__item">
                             <div class="label">address</div>
-                            <div class="content">123 abc st. xyz dictrict qwerty city</div>
+                            <div class="content">
+                                <p>123 abc st.</p>
+                                <p>xyz dictrict</p>
+                                <p>qwerty city</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -160,13 +174,16 @@
                                     <textarea rows="2" class="form__control --textarea"></textarea>
                                 </div>
                             </div>
-                            <div class="submit-btn"></div>
+                            <div class="submit-btn">
+                                <span>send</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="back-to-top">
-                        <img src="img/icon/iconfinder_Arrow-Right.svg" alt="BACK TO TOP" class="inline-svg" />
+                    <div class="back-to-top" title="BACK TO TOP">
+                        <img src="img/icon/iconfinder_Arrow-Right.svg" alt="BACK TO TOP"
+                            class="inline-svg unselectable" />
                     </div>
-                    <div class="copy-right">
+                    <div class="copy-right unselectable">
                         <div>© 2021 GBOX STUDIO. All rights reserved</div>
                         <div>This is my personal project. All content is not mine</div>
                     </div>

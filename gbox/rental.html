@@ -31,7 +31,7 @@
                     <div class="burger">
                         <span></span>
                     </div>
-                    <a href="/" class="logo-link">
+                    <a href="./" class="logo-link">
                         <img src="img/icon/logo.svg" alt="GBox Studio" class="inline-svg logo" />
                     </a>
                     <a href="#" class="fb-link">
@@ -43,16 +43,16 @@
                 <div class="container">
                     <div class="navigation__wrapper">
                         <div class="navigation__item">
-                            <a href="/about.html"><span>about</span></a>
+                            <a href="about.html"><span>about</span></a>
                         </div>
                         <div class="navigation__item --center">
-                            <a href="/studio.html"><span>studio</span></a>
-                            <a href="/rental.html"><span>rental</span></a>
-                            <a href="/cafe.html"><span>cafe</span></a>
-                            <a href="/work.html"><span>work</span></a>
+                            <a href="studios.html"><span>studio</span></a>
+                            <a href="rental.html"><span>rental</span></a>
+                            <a href="cafe.html"><span>cafe</span></a>
+                            <a href="allworks.html"><span>work</span></a>
                         </div>
                         <div class="navigation__item">
-                            <a href="/contact.html"><span>contact</span></a>
+                            <a href="contact.html"><span>contact</span></a>
                         </div>
                     </div>
                 </div>
@@ -61,28 +61,38 @@
         <nav>
             <div class="container">
                 <div class="navigation__wrapper">
-                    <a class="navigation__item" href="/about.html">
+                    <a class="navigation__item" href="about.html">
                         <span>about</span>
                     </a>
-                    <a class="navigation__item" href="/studio.html">
+                    <a class="navigation__item" href="studios.html">
                         <span>studio</span>
                     </a>
-                    <a class="navigation__item" href="/rental.html">
+                    <a class="navigation__item" href="rental.html">
                         <span>rental</span>
                     </a>
-                    <a class="navigation__item" href="/cafe.html">
+                    <a class="navigation__item" href="cafe.html">
                         <span>cafe</span>
                     </a>
-                    <a class="navigation__item" href="/work.html">
+                    <a class="navigation__item" href="allworks.html">
                         <span>work</span>
                     </a>
-                    <a class="navigation__item" href="/contact.html">
+                    <a class="navigation__item" href="contact.html">
                         <span>contact</span>
                     </a>
                 </div>
             </div>
         </nav>
-        <div class="overlay"></div>
+        <div class="overlay">
+            <div class="wrapper">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+                <span>Loading</span>
+            </div>
+        </div>
         <main>
             <section class="rental__form">
                 <div class="container">
@@ -92,14 +102,16 @@
                                 <div class="label">studio</div>
                                 <div class="number">04</div>
                             </div>
-                            <h1>rental</h1>
-                            <div class="studio__info">
-                                <div class="label">dimensions</div>
-                                <div class="text">87ft &#120 92ft &#120 32ft</div>
-                                <div class="text">(26.52m &#120 28.04m &#120 9.45m)</div>
+                            <div class="studio__text">
+                                <h1>rental</h1>
+                                <div class="studio__info">
+                                    <div class="label">dimensions</div>
+                                    <div class="text">87ft &#120 92ft &#120 32ft</div>
+                                    <div class="text">(26.52m &#120 28.04m &#120 9.45m)</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form">
+                        <form class="form" action="#">
                             <div class="form__customer">
                                 <div class="form__label">company details</div>
                                 <div class="form__group">
@@ -149,12 +161,14 @@
                                     <label for="catering">catering requirements:</label>
                                 </div>
                                 <div class="form__group">
+                                    <small>Please note: All lighting hire to go through Gbox Studios</small>
                                     <textarea id="lighting" name="lighting" rows="5"></textarea>
                                     <label for="lighting">lighting requirements:</label>
                                 </div>
                                 <div class="form__group --span">
-                                    <div class="input-wrapper">
+                                    <div class="input-wrapper --date">
                                         <input type="date" id="from-date" name="from-date">
+                                        <img src="img/icon/down-arrow.svg" class="inline-svg unselectable">
                                         <input type="date" id="to-date" name="to-date">
                                     </div>
                                     <div class="form__group-label">booking duration:</div>
@@ -169,13 +183,15 @@
                                 </div>
                             </div>
                             <div class="booking">
-                                <div class="booking__message">if you want booking studios</div>
+                                <div class="booking__message">By submitting this form I agree to
+                                    <a href="#">GBox Studio’s Terms & Conditions.</a>
+                                </div>
                                 <div class="booking__btn button --special">
-                                    <span>book</span>
-                                    <span>now</span>
+                                    <span class="unselectable">book</span>
+                                    <span class="unselectable">now</span>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -194,7 +210,11 @@
                         </div>
                         <div class="info__item">
                             <div class="label">address</div>
-                            <div class="content">123 abc st. xyz dictrict qwerty city</div>
+                            <div class="content">
+                                <p>123 abc st.</p>
+                                <p>xyz dictrict</p>
+                                <p>qwerty city</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -229,13 +249,16 @@
                                     <textarea rows="2" class="form__control --textarea"></textarea>
                                 </div>
                             </div>
-                            <div class="submit-btn"></div>
+                            <div class="submit-btn">
+                                <span>send</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="back-to-top">
-                        <img src="img/icon/iconfinder_Arrow-Right.svg" alt="BACK TO TOP" class="inline-svg" />
+                    <div class="back-to-top" title="BACK TO TOP">
+                        <img src="img/icon/iconfinder_Arrow-Right.svg" alt="BACK TO TOP"
+                            class="inline-svg unselectable" />
                     </div>
-                    <div class="copy-right">
+                    <div class="copy-right unselectable">
                         <div>© 2021 GBOX STUDIO. All rights reserved</div>
                         <div>This is my personal project. All content is not mine</div>
                     </div>

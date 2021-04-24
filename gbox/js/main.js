@@ -195,3 +195,13 @@ $backToTop.on("click", function () {
 	// THANKS TO "Explosion Pills"
 	$("html, body").animate({ scrollTop: 0 }, 1000);
 });
+
+const $rentalForm = $(".rental main .form");
+const $rentalSubmit = $rentalForm.find(".booking__btn");
+$rentalSubmit.on("submit", function (event) {
+	alert("Handler for .submit() called.");
+	event.preventDefault();
+});
+$rentalSubmit.on("click", function () {
+	$rentalForm.trigger("submit");
+});
