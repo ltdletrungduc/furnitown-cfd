@@ -1,6 +1,10 @@
 svgToInline(".inline-svg");
 $(window).on("load", function () {
 	$("#loading").addClass("--loaded");
+	if (window.matchMedia("(max-width: 767px)").matches) {
+		// The viewport is less than 768 pixels wide
+		header.addClass("--active");
+	}
 	closeSideNav();
 });
 const sliderWrapper = $(".slider__wrapper");
@@ -37,7 +41,6 @@ $(window).on("load", function () {
 });
 
 /* SHOW - HIDE HEADER WHEN SCROLLING */
-
 const header = $("header.main-header"),
 	toggleBtn = $("#toggle-btn");
 // $(window).on("load", function () {
@@ -45,6 +48,7 @@ const header = $("header.main-header"),
 // 	header.removeClass("--minimize");
 // });
 let lastScollPos = 0;
+const toggleBtnY = toggleBtn.offset().top + toggleBtn.height();
 $(document).on("scroll", function () {
 	headerStyling($(this));
 	closeSideNav();
@@ -52,10 +56,11 @@ $(document).on("scroll", function () {
 function headerStyling(window) {
 	let scrollTop = window.scrollTop();
 	//console.log(scrollTop + " " + lastScollPos);
-
 	if (scrollTop > lastScollPos) {
 		// downscroll code
-		header.removeClass("--active");
+		if (scrollTop > 270) {
+			header.removeClass("--active");
+		}
 	} else {
 		// upscroll code
 		if (scrollTop >= toggleBtn.offset().top + toggleBtn.height()) {
@@ -222,61 +227,6 @@ $productImages.flickity({
 		},
 	},
 });
-
-// const fake_ajax_data = {
-// 	item1: {
-// 		name: "Ajax Item",
-// 		price: "50000",
-// 		"price-unit": "VND",
-// 		"img-src": "img/ultility_1.jpg",
-// 	},
-// 	item2: {
-// 		name: "Ajax Item",
-// 		price: "50000",
-// 		"price-unit": "VND",
-// 		"img-src": "img/ultility_2.jpg",
-// 	},
-// 	item3: {
-// 		name: "Ajax Item",
-// 		price: "50000",
-// 		"price-unit": "VND",
-// 		"img-src": "img/ultility_3.jpg",
-// 	},
-// 	item4: {
-// 		name: "Ajax Item",
-// 		price: "50000",
-// 		"price-unit": "VND",
-// 		"img-src": "img/ultility_4.jpg",
-// 	},
-// 	item5: {
-// 		name: "Ajax Item",
-// 		price: "50000",
-// 		"price-unit": "VND",
-// 		"img-src": "img/ultility_5.jpg",
-// 	},
-// 	item6: {
-// 		name: "Ajax Item",
-// 		price: "50000",
-// 		"price-unit": "VND",
-// 		"img-src": "img/ultility_6.jpg",
-// 	},
-// };
-
-// const $loadMoreBtn = $(".category__detail .load-more");
-// $loadMoreBtn.on("click", function () {
-// 	//call ajax
-// 	let condition = true;
-// 	if (condition) {
-// 		$(".category__detail .category__products").append("");
-// 	}
-// });
-
-// function appendHelper(ajax_data) {
-// 	let result = [];
-// 	ajax_data.each(function () {
-
-// 	});
-// }
 
 //FB SHARE
 $(".fbsharelink").on("click", function () {
