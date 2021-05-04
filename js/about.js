@@ -1,0 +1,1 @@
+svgToInline(".inline-svg");

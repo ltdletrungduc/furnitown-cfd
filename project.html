@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Duc Le Trung</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io//favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io//favicon-16x16.png" />
+        <link rel="manifest" href="img/favicon_io//site.webmanifest" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="fonts.css">
+    </head>
+
+    <body class="project">
+        <div class=" full-screen">
+            <div class="text">
+                <p>I'am Duc Trung Le.</p>
+                <p>I would like to become a Front-end web
+                    developer. </p>
+                <p>(I hope it can happen one day)</>
+            </div>
+            <div class="bg"></div>
+            <div class="slogan">
+                <p>knowledge and skill can be learned.</p>
+                <p>personality is inherent!</p>
+            </div>
+            <a class="button --back-btn" href="./">
+                <p>back</p>
+                <svg width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
+        <div class="project__content">
+            <h1>my project</h1>
+            <div class="project__list">
+                <div class="project__item --furnitown">
+                    <div class="content">
+                        <div class="info">
+                            <h2 class="name">
+                                <div class="label">project</div>
+                                <div class="value">furnitown</div>
+                            </h2>
+                            <div class="year">
+                                <div class="label">year</div>
+                                <div class="value">2021</div>
+                            </div>
+                        </div>
+                        <a href="https://ltdletrungduc.github.io/furnitown/" class="link --project">visit website</a>
+                    </div>
+                    <div class="img-container">
+                        <img src="img/furnitown/image1.jpg" alt="">
+                        <img src="img/furnitown/image2.jpg" alt="">
+                        <img src="img/furnitown/image3.jpg" alt="">
+                        <img src="img/furnitown/image4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="project__item --gbox">
+                    <div class="content">
+                        <div class="info">
+                            <h2 class="name">
+                                <div class="label">project</div>
+                                <div class="value">gbox</div>
+                            </h2>
+                            <div class="year">
+                                <div class="label">year</div>
+                                <div class="value">2021</div>
+                            </div>
+                        </div>
+                        <a href="https://ltdletrungduc.github.io/gbox/" class="link --project">visit website</a>
+                    </div>
+                    <div class="img-container --furnitown">
+                        <img src="img/gbox/image1.jpg" alt="">
+                        <img src="img/gbox/image2.jpg" alt="">
+                        <img src="img/gbox/image3.jpg" alt="">
+                        <img src="img/gbox/image4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <a class="link --contact" href="./contact.html">Contact me</a>
+        </div>
+        <script>
+            document.querySelector( ".bg" ).addEventListener( "mouseover", function () {
+                document.querySelector( ".text" ).classList.add( "--animated" );
+                document.querySelector( ".slogan" ).classList.add( "--animated" );
+            } );
+            document.querySelector( ".bg" ).addEventListener( "mouseout", function () {
+                document.querySelector( ".text" ).classList.remove( "--animated" );
+                document.querySelector( ".slogan" ).classList.remove( "--animated" );
+            } );
+        </script>
+    </body>
+
+</html>

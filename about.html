@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Duc Le Trung</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io//favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io//favicon-16x16.png" />
+        <link rel="manifest" href="img/favicon_io//site.webmanifest" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="fonts.css">
+    </head>
+
+    <body class="about">
+        <div class=" full-screen">
+            <div class="text">
+                <p>I'am Duc Trung Le.</p>
+                <p>I would like to become a Front-end web
+                    developer. </p>
+                <p>(I hope it can happen one day)</>
+            </div>
+            <div class="bg"></div>
+            <div class="slogan">
+                <p>knowledge and skill can be learned.</p>
+                <p>personality is inherent!</p>
+            </div>
+            <a class="button --back-btn" href="./">
+                <p>back</p>
+                <svg width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
+        <div class="about__content">
+            <h1>about me</h1>
+            <div class="article">
+                <p>
+                    I am Duc Le Trung. I am just a "newbie" in Web Develop,
+                </p>
+                <p>
+                </p>
+                <p>
+                    Morbi ultrices sem sagittis neque euismod, eu laoreet neque tincidunt. Morbi lacinia facilisis
+                    dolor, nec venenatis mi.
+                    Nullam hendrerit lectus vel volutpat mattis. Nulla facilisi. In hac habitasse platea dictumst.
+                    Curabitur vel nunc lorem.
+                    Integer porttitor justo nec diam pharetra lobortis. Quisque ac finibus massa. Quisque sagittis lacus
+                    ac velit ultricies
+                    volutpat. Suspendisse vitae tortor nisl. Duis cursus lectus nunc, vel congue enim placerat eu. Sed
+                    vestibulum elit ante,
+                    sit amet tincidunt purus rhoncus nec. Vestibulum condimentum fringilla erat, vitae ultrices diam
+                    tempor id.
+
+                </p>
+                <p>
+                    Morbi feugiat at felis quis tempor. Mauris vulputate, lacus ac placerat faucibus, elit ex dapibus
+                    sem, in pellentesque
+                    ipsum sem vel enim. Nullam tincidunt, tortor id faucibus imperdiet, augue mauris ultrices lorem, sit
+                    amet tincidunt
+                    purus est vel leo. Ut mauris mauris, elementum vel nisl vitae, efficitur efficitur est. Fusce
+                    lobortis, lorem ut
+                    suscipit iaculis, lorem tellus pretium nisi, non egestas lacus lacus a risus. Aliquam molestie dui
+                    in gravida
+                    sollicitudin. Aliquam erat volutpat. Duis arcu tellus, faucibus eu mauris et, feugiat accumsan nisi.
+
+                </p>
+                <p>
+                    Maecenas molestie, tellus id tempor imperdiet, augue enim tincidunt justo, a rhoncus elit felis eget
+                    felis. Fusce
+                    posuere, purus sed hendrerit rhoncus, velit elit venenatis sapien, non hendrerit magna erat a sem.
+                    In dui justo,
+                    sollicitudin a nibh ut, aliquam rutrum nisi. Donec feugiat porta ex eu imperdiet. Donec vel sapien
+                    justo. Phasellus id
+                    erat risus. Morbi mauris dolor, porta ut sollicitudin nec, blandit mollis nisi. Vivamus ipsum
+                    libero, dictum non
+                    consequat quis, venenatis et magna.
+                </p>
+            </div>
+            <a class="my-resume" href="./DucLeTrung-FrontEnd.pdf">my resume (pdf)</a>
+        </div>
+        <script>
+            document.querySelector( ".bg" ).addEventListener( "mouseover", function () {
+                document.querySelector( ".text" ).classList.add( "--animated" );
+                document.querySelector( ".slogan" ).classList.add( "--animated" );
+            } );
+            document.querySelector( ".bg" ).addEventListener( "mouseout", function () {
+                document.querySelector( ".text" ).classList.remove( "--animated" );
+                document.querySelector( ".slogan" ).classList.remove( "--animated" );
+            } );
+        </script>
+    </body>
+
+</html>
