@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Duc Le Trung</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io//favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io//favicon-16x16.png" />
+        <link rel="manifest" href="img/favicon_io//site.webmanifest" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="fonts.css">
+    </head>
+
+    <body class="contact">
+        <div class=" full-screen">
+            <div class="text">
+                <p>I'am Duc Trung Le.</p>
+                <p>I would like to become a Front-end web
+                    developer. </p>
+                <p>(I hope it can happen one day)</>
+            </div>
+            <div class="bg"></div>
+            <div class="slogan">
+                <p>knowledge and skill can be learned.</p>
+                <p>personality is inherent!</p>
+            </div>
+            <a class="button --back-btn" href="./">
+                <p>back</p>
+                <svg width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
+        <div class="contact__content">
+            <h1>contact</h1>
+            <div class="contact__list">
+                <div class="contact__list-item --email"><span>ltdletrungduc@gmail.com</span>
+                </div>
+                <a class="contact__list-item --fb" href="#"><span>Facebook</span></a>
+                <a class="contact__list-item --linkedin" href="#"><span>Linkedin</spa></a>
+            </div>
+        </div>
+        <script>
+            document.querySelector( ".bg" ).addEventListener( "mouseover", function () {
+                document.querySelector( ".text" ).classList.add( "--animated" );
+                document.querySelector( ".slogan" ).classList.add( "--animated" );
+            } );
+            document.querySelector( ".bg" ).addEventListener( "mouseout", function () {
+                document.querySelector( ".text" ).classList.remove( "--animated" );
+                document.querySelector( ".slogan" ).classList.remove( "--animated" );
+            } );
+        </script>
+    </body>
+
+</html>
