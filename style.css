@@ -542,9 +542,16 @@ a {
       font-family: Roboto-Bold;
       text-transform: uppercase;
       color: white; }
-    .about__content .article p {
-      margin-bottom: 20px;
-      color: white; }
+    .about__content .article {
+      font-family: Roboto-Medium; }
+      .about__content .article p {
+        margin-bottom: 20px;
+        color: white;
+        font-size: 20px; }
+      .about__content .article .link,
+      .about__content .article .my-resume {
+        font-size: 22px;
+        color: red; }
 
 .project {
   background-color: black; }
