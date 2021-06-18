@@ -1,0 +1,53 @@
+@font-face {
+	font-family: "AD";
+	src: url("./ArchitectsDaughter-Regular.woff2") format("woff2"),
+		url("./ArchitectsDaughter-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "FTG";
+	src: url("./FrederickatheGreat-Regular.woff2") format("woff2"),
+		url("./FrederickatheGreat-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "M-Bold";
+	src: url("./Montserrat-Bold.woff2") format("woff2"),
+		url("./Montserrat-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "M-ExBold";
+	src: url("./Montserrat-ExtraBold.woff2") format("woff2"),
+		url("./Montserrat-ExtraBold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "M-Regular";
+	src: url("./Montserrat-Regular.woff2") format("woff2"),
+		url("./Montserrat-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "M-Medium";
+	src: url("./Montserrat-Medium.woff2") format("woff2"),
+		url("./Montserrat-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: fallback;
+}
